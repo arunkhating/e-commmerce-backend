@@ -8,3 +8,4 @@ class Product(Base):
     name = Column(String)
     description = Column(String)
     price = Column(Float)
+    image = Column(String)

@@ -1,12 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-DATABASE_URL = "sqlite:///./ecommerce.db"
+DATABASE_URL = "postgresql://admin:admin123@localhost:5433/ecommerce"
 
-engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
-)
-
-SessionLocal = sessionmaker(bind=engine)
+engine = create_engine(DATABASE_URL)
 
 Base = declarative_base()
+
+from app.models import *
+SessionLocal = sessionmaker(bind=engine)
