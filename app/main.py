@@ -4,6 +4,8 @@ from app.database import Base, engine
 # from app.routes import auth, products
 from app.routes import auth, products
 
+#Base.metadata.create_all(bind=engine)
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="E-Commerce Backend")
